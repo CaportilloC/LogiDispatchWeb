@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LogiDispatchWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+651fc703ec6b740df7471814402ac08615e38e0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e49e6f3efa000cc834d91c0e837b294e44705627")]
 [assembly: System.Reflection.AssemblyProductAttribute("LogiDispatchWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LogiDispatchWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
