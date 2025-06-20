@@ -1,0 +1,52 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.log
+
+# Visual Studio
+.vscode/
+.vs/
+*.dbmdl
+*.cache
+*.pdb
+
+# Build Results
+[Ll]og/
+*.log
+
+# Runtime files
+*.dll
+*.exe
+
+# User-specific files
+*.rsuser
+*.userprefs
+
+# ASP.NET temporary files
+**/wwwroot/lib/*
+!**/wwwroot/lib/.gitkeep
+
+# Publish results
+publish/
+out/
+
+# NuGet
+*.nupkg
+.nuget/
+packages/
+project.lock.json
+
+# Config
+appsettings.Development.json
+secrets.json
+
+# Others
+*.swp
+*.tmp
+*.bak
+*.orig
+*.rej
