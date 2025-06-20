@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\LogiDispatchWeb.props" />
-</Project>
