@@ -1,0 +1,92 @@
+﻿@model List<LogiDispatchWeb.Models.DTOs.OrderDto>
+
+@{
+    ViewData["Title"] = "Órdenes de Despacho";
+}
+
+<div class="card mt-4 shadow-sm border-0 rounded-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center rounded-top-4">
+        <h5 class="mb-0">Gestión de Órdenes</h5>
+        <a asp-controller="Orders" asp-action="Create" class="btn btn-success rounded-pill px-3 shadow-sm">
+            <i class="bi bi-plus-circle me-1"></i> Nueva Orden
+        </a>
+    </div>
+    <div class="card-body">
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show rounded-3" role="alert">
+                @ViewData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>
+        }
+        <form method="get" class="mb-4 d-flex align-items-end gap-3">
+            <div>
+                <label class="form-label mb-1">Filtrar por estado</label>
+                <select name="status" class="form-select form-select-sm rounded-3 shadow-sm" onchange="this.form.submit()">
+                    @foreach (var item in (SelectList)ViewBag.StatusList)
+                    {
+                        <option value="@item.Value" selected="@(item.Selected ? "selected" : null)">
+                            @item.Text
+                        </option>
+                    }
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-sm btn-outline-primary rounded-pill">Aplicar</button>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center align-middle rounded-3 overflow-hidden shadow-sm">
+                <thead class="table-primary text-dark">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Teléfono</th>
+                        <th>Latitud Origen</th>
+                        <th>Longitud Origen</th>
+                        <th>Latitud Destino</th>
+                        <th>Longitud Destino</th>
+                        <th>Distancia (Km)</th>
+                        <th>Costo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.CustomerName</td>
+                            <td>@order.CustomerPhone</td>
+                            <td>@order.OriginLatitude.ToString("F6")</td>
+                            <td>@order.OriginLongitude.ToString("F6")</td>
+                            <td>@order.DestinationLatitude.ToString("F6")</td>
+                            <td>@order.DestinationLongitude.ToString("F6")</td>
+                            <td>@order.DistanceKm</td>
+                            <td>$@((int)order.ShippingCost)</td>
+                            <td>
+                                <a asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id" class="btn btn-sm btn-outline-info rounded-pill me-1">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a asp-controller="Orders" asp-action="Edit" asp-route-id="@order.Id" class="btn btn-sm btn-outline-warning rounded-pill me-1">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-danger rounded-pill" onclick="confirmDelete('@order.Id')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="feedback-container"
+     data-success="@TempData["SuccessMessage"]"
+     data-error="@ViewData["ErrorMessage"]">
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/order-actions.js" asp-append-version="true"></script>
+}
