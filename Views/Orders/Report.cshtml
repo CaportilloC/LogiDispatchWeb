@@ -1,0 +1,43 @@
+﻿@model List<LogiDispatchWeb.Models.ViewModels.OrderReportSummaryViewModel>
+
+@{
+    ViewData["Title"] = "Reporte de Órdenes por Intervalo";
+    var ranges = new[] { "1–50 km", "51–200 km", "201–500 km", "501–1000 km" };
+}
+
+<div class="card mt-4 shadow-sm border-0 rounded-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center rounded-top-4">
+        <h5 class="mb-0">Reporte de Órdenes por Cliente e Intervalo</h5>
+        <a asp-action="ExportToExcel" class="btn btn-light rounded-pill px-3 shadow-sm">
+            <i class="bi bi-download me-1"></i> Descargar Excel
+        </a>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center align-middle rounded-3 overflow-hidden shadow-sm">
+                <thead class="table-primary text-dark">
+                    <tr>
+                        <th>Cliente</th>
+                        @foreach (var r in ranges)
+                        {
+                            <th>@r</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model)
+                    {
+                        <tr>
+                            <td>@row.Customer</td>
+                            @foreach (var r in ranges)
+                            {
+                                <td>@(row.Intervals.ContainsKey(r) ? row.Intervals[r] : 0)</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
