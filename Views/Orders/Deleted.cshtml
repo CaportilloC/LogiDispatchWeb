@@ -1,0 +1,75 @@
+﻿@model List<LogiDispatchWeb.Models.DTOs.OrderDto>
+
+@{
+    ViewData["Title"] = "Órdenes Eliminadas";
+}
+
+<div class="card mt-4 shadow-sm border-0 rounded-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center rounded-top-4">
+        <h5 class="mb-0">Órdenes Eliminadas</h5>
+        <a asp-action="Index" class="btn btn-light rounded-pill px-3 shadow-sm">
+            <i class="bi bi-arrow-left-circle me-1"></i> Volver
+        </a>
+    </div>
+
+    <div class="card-body">
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show rounded-3" role="alert">
+                @ViewData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>
+        }
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center align-middle rounded-3 overflow-hidden shadow-sm">
+                <thead class="table-primary text-dark">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Teléfono</th>
+                        <th>Latitud Origen</th>
+                        <th>Longitud Origen</th>
+                        <th>Latitud Destino</th>
+                        <th>Longitud Destino</th>
+                        <th>Distancia (Km)</th>
+                        <th>Costo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.CustomerName</td>
+                            <td>@order.CustomerPhone</td>
+                            <td>@order.OriginLatitude.ToString("F6")</td>
+                            <td>@order.OriginLongitude.ToString("F6")</td>
+                            <td>@order.DestinationLatitude.ToString("F6")</td>
+                            <td>@order.DestinationLongitude.ToString("F6")</td>
+                            <td>@order.DistanceKm</td>
+                            <td>$@((int)order.ShippingCost)</td>
+                            <td>
+                                <form id="restore-form-@order.Id" asp-action="Restore" asp-route-id="@order.Id" method="post" class="d-inline">
+                                    <button type="button" class="btn btn-sm btn-outline-success rounded-pill shadow-sm"
+                                            onclick="confirmRestore('@order.Id')">
+                                        <i class="bi bi-arrow-counterclockwise me-1"></i> Restaurar
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="feedback-container"
+     data-success="@TempData["SuccessMessage"]"
+     data-error="@ViewData["ErrorMessage"]">
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/order-actions.js" asp-append-version="true"></script>
+}

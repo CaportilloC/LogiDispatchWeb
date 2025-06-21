@@ -1,0 +1,110 @@
+﻿@model LogiDispatchWeb.Models.DTOs.UpdateOrderRequest
+
+@{
+    ViewData["Title"] = "Editar Orden";
+}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<div class="card mt-4 shadow-sm border-0 rounded-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center rounded-top-4">
+        <h5 class="mb-0">Editar Orden</h5>
+        <a asp-action="Index" class="btn btn-light rounded-pill px-3 shadow-sm">
+            <i class="bi bi-arrow-left-circle me-1"></i> Volver
+        </a>
+    </div>
+
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <!-- Cliente -->
+            <div class="mb-3">
+                <label asp-for="CustomerId" class="form-label">Cliente</label>
+                <select asp-for="CustomerId" class="form-control shadow-sm rounded-3" asp-items="ViewBag.Customers">
+                    <option value="">-- Seleccione un cliente --</option>
+                </select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+
+            <!-- Estado -->
+            <div class="mb-3">
+                <label for="Status" class="form-label">Estado</label>
+                <select id="Status" name="Status" class="form-control shadow-sm rounded-3" asp-items="ViewBag.StatusList">
+                    <option value="">-- Seleccione un estado --</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <hr />
+
+            <!-- Coordenadas Origen -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="OriginLatitude" class="form-label">Latitud Origen</label>
+                    <input id="OriginLatitude" name="OriginLatitude" type="number" step="any" class="form-control shadow-sm rounded-3" asp-for="OriginLatitude" />
+                    <span asp-validation-for="OriginLatitude" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="OriginLongitude" class="form-label">Longitud Origen</label>
+                    <input id="OriginLongitude" name="OriginLongitude" type="number" step="any" class="form-control shadow-sm rounded-3" asp-for="OriginLongitude" />
+                    <span asp-validation-for="OriginLongitude" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Coordenadas Destino -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="DestinationLatitude" class="form-label">Latitud Destino</label>
+                    <input id="DestinationLatitude" name="DestinationLatitude" type="number" step="any" class="form-control shadow-sm rounded-3" asp-for="DestinationLatitude" />
+                    <span asp-validation-for="DestinationLatitude" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="DestinationLongitude" class="form-label">Longitud Destino</label>
+                    <input id="DestinationLongitude" name="DestinationLongitude" type="number" step="any" class="form-control shadow-sm rounded-3" asp-for="DestinationLongitude" />
+                    <span asp-validation-for="DestinationLongitude" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div id="map" style="height: 400px;" class="mb-4 border rounded-3 shadow-sm"></div>
+
+            <hr />
+
+            <!-- Productos -->
+            <h5>Productos</h5>
+            <div id="productsContainer" class="mb-3"></div>
+
+            <button type="button" class="btn btn-secondary rounded-pill shadow-sm mb-3" onclick="addProduct()">
+                <i class="bi bi-plus-circle me-1"></i> Agregar Producto
+            </button>
+
+            <!-- Acciones -->
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary rounded-pill px-4 shadow-sm me-2">
+                    <i class="bi bi-save me-1"></i> Actualizar
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 shadow-sm">
+                    <i class="bi bi-x-circle me-1"></i> Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        window.editOrderData = {
+            products: @Html.Raw(Json.Serialize(ViewBag.Products)),
+            items: @Html.Raw(Json.Serialize(Model.Items)),
+            errorMessage: @Html.Raw(Json.Serialize(ViewData["ErrorMessage"]))
+        };
+    </script>
+
+    <script src="~/js/edit-order.js" asp-append-version="true"></script>
+}

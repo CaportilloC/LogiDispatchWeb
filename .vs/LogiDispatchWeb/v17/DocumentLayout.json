@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|c:\\users\\chris\\documents\\github\\logidispatchweb\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|c:\\users\\chris\\documents\\github\\logidispatchweb\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|solutionrelative:views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|c:\\users\\chris\\documents\\github\\logidispatchweb\\views\\orders\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|solutionrelative:views\\orders\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|c:\\users\\chris\\documents\\github\\logidispatchweb\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|c:\\users\\chris\\documents\\github\\logidispatchweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD8748BE-62B9-4EFB-BC86-EDFECCAE4F48}|LogiDispatchWeb.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\README.md*",
+              "RelativeToolTip": "README.md*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwD0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-06-21T23:40:40.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Views\\Orders\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Views\\Orders\\Index.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-21T23:23:41.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Views\\Orders\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Views\\Orders\\Create.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-21T23:23:38.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T21:08:44.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\chris\\Documents\\GitHub\\LogiDispatchWeb\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T20:57:44.271Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
